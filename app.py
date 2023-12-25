@@ -2,12 +2,16 @@ from flask import Flask, render_template, redirect, url_for, request
 import numpy as np
 import pandas as pd
 import pickle
+import bz2
+import _pickle as cPickle
 
 app = Flask(__name__)
 
 popular_movies = pickle.load(open('popular_movies.pkl', 'rb'))
 movies = pickle.load(open('movies.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+# similarity = pickle.load(open('similarity.pkl', 'rb'))
+content = bz2.BZ2File('similarity.pbz2', 'rb')
+similarity = cPickle.load(content)
 
 
 @app.route('/', methods = ['GET', 'POST'])
