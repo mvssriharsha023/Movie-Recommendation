@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inder", sans-serif;
+    
+    font-style: normal;
+}
+
+body {
+    border: none;
+    background-color: black;
+}
+
+.navbar {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.menu li {
+    font-size: 1.1rem;
+    list-style: none;
+    color: black;
+    padding: 10px;
+    margin-right: 2px;
+}
+
+.menu .desktop {
+    padding: 16px 20px;
+}
+
+.menu .active, .menu-sidebar .active {
+    border-bottom: 2px solid whitesmoke;
+    background-color: rgb(67, 67, 67);
+
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.menu .title {
+    color: red;
+    font-weight: 700;
+}
+
+.menu .mobile {
+    display: none;
+}
+
+@media(max-width:650px) {
+    .menu .mobile {
+        display: flex;
+        position: fixed;
+        right: 15px;
+    }
+    .menu .desktop {
+        display: none;
+    }
+}
+
+.menu-sidebar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: whitesmoke;
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    backdrop-filter: blur(10px);
+}
+
+.menu-sidebar li {
+    list-style: none;
+    padding: 10px;
+}
+
+.main-content {
+    /* background-color: white; */
+    color: black;
+    padding: 20px 60px;
+}
+
+.main-content h1 {
+    margin-bottom: 40px;
+    color: whitesmoke;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 16rem;
+    height: auto;
+    border-radius: 1rem;
+    margin: 0 2rem 2rem 0;
+    overflow: hidden;
+    background-color: transparent;
+    padding-bottom: 5px;
+}
+
+.card-img img{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card-content .content {
+    padding: 5px 10px;
+    color: white;
+}
+
+@media(max-width: 699px) {
+    .cards {
+        display: flex;
+        justify-content: center;
+    }
+    .card {
+        width: 18rem;
+    }
+}
+
+@media(max-width: 980px){
+    .cards {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .card {
+        width: 18rem;
+    }
+}
